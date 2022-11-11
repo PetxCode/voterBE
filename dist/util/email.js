@@ -23,7 +23,7 @@ const GOOGLE_REFRESHTOKEN = "1//04h7d93kXEa_mCgYIARAAGAQSNwF-L9IrRBMf9gTPHHPp4rs
 const GOOGLE_REDIRECT = "https://developers.google.com/oauthplayground";
 const oAuth = new googleapis_1.google.auth.OAuth2(GOOGLE_ID, GOOGLE_SECRET, GOOGLE_REDIRECT);
 oAuth.setCredentials({ refresh_token: GOOGLE_REFRESHTOKEN });
-const url = "https://nycn-vote.web.app/";
+const url = "https://nycn-vote.web.app";
 const urlLocal = "localhost:2245";
 const verifiedUser = (email, fullName, realToken, getUser) => __awaiter(void 0, void 0, void 0, function* () {
     try {
