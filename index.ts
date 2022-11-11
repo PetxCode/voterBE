@@ -39,6 +39,10 @@ app.get("/", (req: Request, res: Response): Response => {
   return res.json({ message: "This is the Voting API" });
 });
 
+app.get("/start", (req: Request, res: Response): Response => {
+  return res.json({ message: "This is the Voting API" });
+});
+
 app.use("/api/user", user);
 app.use("/api/organisation", organisation);
 

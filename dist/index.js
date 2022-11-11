@@ -35,6 +35,9 @@ app.use(express_1.default.json());
 app.get("/", (req, res) => {
     return res.json({ message: "This is the Voting API" });
 });
+app.get("/start", (req, res) => {
+    return res.json({ message: "This is the Voting API" });
+});
 app.use("/api/user", userRoute_1.default);
 app.use("/api/organisation", organisationRoute_1.default);
 app.use("/api/president", presidentRoute_1.default);
