@@ -54,6 +54,13 @@ export const verifiedUser = async (
       },
     });
 
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
     const buildFile = path.join(__dirname, "../views/AccountCreated.ejs");
 
     const data = await ejs.renderFile(buildFile, {
@@ -70,7 +77,7 @@ export const verifiedUser = async (
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
@@ -93,7 +100,13 @@ export const verifiedByAdmin = async (generateToken: iData) => {
       },
     });
 
-    // console.log("userData: ", generateToken);
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
 
     const buildFile = path.join(__dirname, "../views/viewByAdmin.ejs");
 
@@ -111,7 +124,7 @@ export const verifiedByAdmin = async (generateToken: iData) => {
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
@@ -133,6 +146,13 @@ export const verifiedByAdminFinally = async (generateToken: iData) => {
         accessToken: GOOGLE_REFRESHTOKEN,
       },
     });
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
 
     console.log("userData: ", generateToken);
 
@@ -152,7 +172,7 @@ export const verifiedByAdminFinally = async (generateToken: iData) => {
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
@@ -175,6 +195,14 @@ export const verifiedSignUser = async (findUser: iData) => {
       },
     });
 
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
+
     const buildFile = path.join(__dirname, "../views/signinAccount.ejs");
 
     const data = await ejs.renderFile(buildFile, {
@@ -190,7 +218,7 @@ export const verifiedSignUser = async (findUser: iData) => {
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
@@ -217,6 +245,14 @@ export const resetMyPassword = async (
       },
     });
 
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
+
     const buildFile = path.join(__dirname, "../views/resetPassword.ejs");
 
     const data = await ejs.renderFile(buildFile, {
@@ -232,7 +268,7 @@ export const resetMyPassword = async (
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
@@ -261,6 +297,13 @@ export const acceptance = async (
       },
     });
 
+    const myTransporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "Gideonekeke64@gmail.com",
+        pass: "sgczftichnkcqksx",
+      },
+    });
     const buildFile = path.join(__dirname, "../views/Acceptance.ejs");
 
     const data = await ejs.renderFile(buildFile, {
@@ -276,7 +319,7 @@ export const acceptance = async (
       html: data,
     };
 
-    transporter.sendMail(mailOptions, () => {
+    myTransporter.sendMail(mailOptions, () => {
       console.log("sent successfully");
     });
   } catch (error) {
