@@ -39,6 +39,13 @@ const verifiedUser = (email, fullName, realToken, getUser) => __awaiter(void 0, 
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         const buildFile = path_1.default.join(__dirname, "../views/AccountCreated.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
             name: fullName,
@@ -52,7 +59,7 @@ const verifiedUser = (email, fullName, realToken, getUser) => __awaiter(void 0, 
             subject: "Account Verification",
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
@@ -75,7 +82,13 @@ const verifiedByAdmin = (generateToken) => __awaiter(void 0, void 0, void 0, fun
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
-        // console.log("userData: ", generateToken);
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         const buildFile = path_1.default.join(__dirname, "../views/viewByAdmin.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
             name: generateToken === null || generateToken === void 0 ? void 0 : generateToken.fullName,
@@ -89,7 +102,7 @@ const verifiedByAdmin = (generateToken) => __awaiter(void 0, void 0, void 0, fun
             subject: "Please Verify this Account",
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
@@ -112,6 +125,13 @@ const verifiedByAdminFinally = (generateToken) => __awaiter(void 0, void 0, void
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         console.log("userData: ", generateToken);
         const buildFile = path_1.default.join(__dirname, "../views/voterCode.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
@@ -126,7 +146,7 @@ const verifiedByAdminFinally = (generateToken) => __awaiter(void 0, void 0, void
             subject: `${generateToken === null || generateToken === void 0 ? void 0 : generateToken.fullName}'s Account has been Verify`,
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
@@ -149,6 +169,13 @@ const verifiedSignUser = (findUser) => __awaiter(void 0, void 0, void 0, functio
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         const buildFile = path_1.default.join(__dirname, "../views/signinAccount.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
             name: findUser === null || findUser === void 0 ? void 0 : findUser.fullName,
@@ -161,7 +188,7 @@ const verifiedSignUser = (findUser) => __awaiter(void 0, void 0, void 0, functio
             subject: "Account re-Verification",
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
@@ -184,6 +211,13 @@ const resetMyPassword = (name, user, myToken) => __awaiter(void 0, void 0, void 
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         const buildFile = path_1.default.join(__dirname, "../views/resetPassword.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
             name,
@@ -196,7 +230,7 @@ const resetMyPassword = (name, user, myToken) => __awaiter(void 0, void 0, void 
             subject: "Requesting for Password Reset",
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
@@ -220,6 +254,13 @@ const acceptance = (email, positioned, fullName) => __awaiter(void 0, void 0, vo
                 accessToken: GOOGLE_REFRESHTOKEN,
             },
         });
+        const myTransporter = nodemailer_1.default.createTransport({
+            service: "gmail",
+            auth: {
+                user: "Gideonekeke64@gmail.com",
+                pass: "sgczftichnkcqksx",
+            },
+        });
         const buildFile = path_1.default.join(__dirname, "../views/Acceptance.ejs");
         const data = yield ejs_1.default.renderFile(buildFile, {
             name: positioned === null || positioned === void 0 ? void 0 : positioned.fullName,
@@ -232,7 +273,7 @@ const acceptance = (email, positioned, fullName) => __awaiter(void 0, void 0, vo
             subject: `Acceptance for the Position of ${positioned === null || positioned === void 0 ? void 0 : positioned.position}`,
             html: data,
         };
-        transporter.sendMail(mailOptions, () => {
+        myTransporter.sendMail(mailOptions, () => {
             console.log("sent successfully");
         });
     }
